@@ -1,9 +1,11 @@
 # PIP-Net: Patch-Based Intuitive Prototypes for Interpretable Image Classification
-This repository presents the PyTorch code for PIP-Net (Patch-based Intuitive Prototypes Network), published at CVPR 2023.
+This repository presents the PyTorch code for PIP-Net (Patch-based Intuitive Prototypes Network), published at CVPR 2023. 
+
+Paper: ["PIP-Net: Patch-Based Intuitive Prototypes for Interpretable Image Classification"](https://openaccess.thecvf.com/content/CVPR2023/papers/Nauta_PIP-Net_Patch-Based_Intuitive_Prototypes_for_Interpretable_Image_Classification_CVPR_2023_paper.pdf). CVPR 2023 and also part of [my PhD thesis](https://research.utwente.nl/en/publications/explainable-ai-and-interpretable-computer-vision-from-oversight-t) (Chapter 6).
 
 PIP-Net is an interpretable and intuitive deep learning method for image classification. PIP-Net learns prototypical parts: interpretable concepts visualized as image patches. PIP-Net classifies an image with a sparse scoring sheet where the presence of a prototypical part in an image adds evidence for a class. PIP-Net is globally interpretable since the set of learned prototypes shows the entire reasoning of the model. A smaller local explanation locates the relevant prototypes in a test image. The model can also abstain from a decision for out-of-distribution data by saying “I haven’t seen this before”. The model only uses image-level labels and does not rely on any part annotations. 
 
-Paper: "PIP-Net: Patch-Based Intuitive Prototypes for Interpretable Image Classification". Will soon be published by CVPR, and is also available in [my PhD thesis](https://research.utwente.nl/en/publications/explainable-ai-and-interpretable-computer-vision-from-oversight-t) (Chapter 6).
+![Overview of PIP-Net](https://github.com/M-Nauta/PIPNet/blob/main/nauta_pipnet_cpvr.png)
 
 ### Required Python Packages:
 * [PyTorch](https://pytorch.org/get-started/locally/) (incl torchvision, tested with PyTorch 1.13)
