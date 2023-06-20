@@ -1,7 +1,10 @@
 # PIP-Net: Patch-Based Intuitive Prototypes for Interpretable Image Classification
 This repository presents the PyTorch code for PIP-Net (Patch-based Intuitive Prototypes Network), published at CVPR 2023. 
 
-Paper: ["PIP-Net: Patch-Based Intuitive Prototypes for Interpretable Image Classification"](https://openaccess.thecvf.com/content/CVPR2023/papers/Nauta_PIP-Net_Patch-Based_Intuitive_Prototypes_for_Interpretable_Image_Classification_CVPR_2023_paper.pdf). CVPR 2023 and also part of [my PhD thesis](https://research.utwente.nl/en/publications/explainable-ai-and-interpretable-computer-vision-from-oversight-t) (Chapter 6).
+**CVPR Paper**: ["PIP-Net: Patch-Based Intuitive Prototypes for Interpretable Image Classification"](https://openaccess.thecvf.com/content/CVPR2023/papers/Nauta_PIP-Net_Patch-Based_Intuitive_Prototypes_for_Interpretable_Image_Classification_CVPR_2023_paper.pdf). \
+**Medical applications and correcting reasoning**: Chapter 7 of [my PhD thesis](https://research.utwente.nl/en/publications/explainable-ai-and-interpretable-computer-vision-from-oversight-t) (pdf page 138), PIP-Net applied to X-rays and skin lesion images where biases can be fixed by disabling prototypes. \
+**Evaluation of part-prototype models**: Discussion and ideas for future work on evaluation in Chapter 8 of [my PhD thesis](https://research.utwente.nl/en/publications/explainable-ai-and-interpretable-computer-vision-from-oversight-t), paper will be presented at the [XAI World Conference](https://xaiworldconference.com/) in July 2023. 
+
 
 PIP-Net is an interpretable and intuitive deep learning method for image classification. PIP-Net learns prototypical parts: interpretable concepts visualized as image patches. PIP-Net classifies an image with a sparse scoring sheet where the presence of a prototypical part in an image adds evidence for a class. PIP-Net is globally interpretable since the set of learned prototypes shows the entire reasoning of the model. A smaller local explanation locates the relevant prototypes in a test image. The model can also abstain from a decision for out-of-distribution data by saying “I haven’t seen this before”. The model only uses image-level labels and does not rely on any part annotations. 
 
