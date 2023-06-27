@@ -36,7 +36,7 @@ The code can be applied to any imaging classification data set, structured accor
 
 Add or update the paths to your dataset in ``util/data.py``. 
 
-For preparing [CUB-200-2011](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html) with 200 bird species and [Stanford Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html) with 196 car types, use the [Instructions of ProtoTree](https://github.com/M-Nauta/ProtoTree/blob/main/README.md#preprocessing-cub).
+For preparing [CUB-200-2011]([http://www.vision.caltech.edu/visipedia/CUB-200-2011.html](https://www.vision.caltech.edu/datasets/cub_200_2011/)) with 200 bird species, use `util/preprocess_cub.py`. For [Stanford Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html) with 196 car types, use the [Instructions of ProtoTree](https://github.com/M-Nauta/ProtoTree/blob/main/README.md#preprocessing-cub).
 
 ### Interpreting the Results
 During training, various files will be created in your ``--log_dir``:
