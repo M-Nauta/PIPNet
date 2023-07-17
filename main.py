@@ -88,6 +88,7 @@ def run_pipnet(args=None):
     # Initialize or load model
     with torch.no_grad():
         if args.state_dict_dir_net != '':
+            epoch = 0
             checkpoint = torch.load(args.state_dict_dir_net,map_location=device)
             net.load_state_dict(checkpoint['model_state_dict'],strict=True) 
             print("Pretrained network loaded", flush=True)
