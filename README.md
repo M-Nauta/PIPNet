@@ -21,6 +21,11 @@ PIP-Net is an interpretable and intuitive deep learning method for image classif
 ### Training PIP-Net
 PIP-Net can be trained by running `main.py` with arguments. Run `main.py --help` to see all the argument options. Recommended parameters per dataset are present in the `used_arguments.txt` file (usually corresponds to the default options). 
 
+#### Trained checkpoint
+PIP-Net trained on the birds CUB-200-2011 dataset is available [for download](https://drive.google.com/file/d/1G8iiXgZ5gENYicwS8nLIg2Gf43A49kKm/view)  (320MB). Download the CUB dataset (see instructions in this README) and run the following command to generate the prototypes and evaluate the model: 
+``python3 main.py --dataset CUB-200-2011 --epochs_pretrain 0 --batch_size 64 --freeze_epochs 10 --epochs 0 --log_dir ./runs/pipnet_cub --state_dict_dir_net ./pipnet_cub_trained``. Update the path of ``--state_dict_dir_net`` if needed.
+
+#### Training PIP-Net on your own data
 Want to train PIP-Net on another dataset? Add your dataset in ``util/data.py`` by creating a function ``get_yourdata`` with the desired data augmentation (that captures human perception of similarity), add it to the existing ``get_data`` function in ``util/data.py`` and give your dataset a name. Use ``--dataset your_dataset_name`` as argument to run PIP-Net on your dataset. 
 
 Other relevant arguments are for example  ``--weighted_loss`` which is useful when your data is imbalanced. In case of a 2-class task with presence/absence reasoning, you could consider using ``--bias`` to include a traininable bias term in the linear classification layer (which could decrease the OoD abilities) such that PIP-Net does not necessarily need to find evidence for the absence-class.
