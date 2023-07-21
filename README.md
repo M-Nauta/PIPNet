@@ -1,8 +1,8 @@
 # PIP-Net: Patch-Based Intuitive Prototypes for Interpretable Image Classification
-This repository presents the PyTorch code for PIP-Net (Patch-based Intuitive Prototypes Network), published at CVPR 2023. 
+This repository presents the PyTorch code for PIP-Net (Patch-based Intuitive Prototypes Network). 
 
-**CVPR Paper**: ["PIP-Net: Patch-Based Intuitive Prototypes for Interpretable Image Classification"](https://openaccess.thecvf.com/content/CVPR2023/papers/Nauta_PIP-Net_Patch-Based_Intuitive_Prototypes_for_Interpretable_Image_Classification_CVPR_2023_paper.pdf). \
-**Medical applications and correcting reasoning**: Chapter 7 of [my PhD thesis](https://research.utwente.nl/en/publications/explainable-ai-and-interpretable-computer-vision-from-oversight-t) (pdf page 138), PIP-Net applied to X-rays and skin lesion images where biases can be fixed by disabling prototypes. \
+**Main Paper at CVPR**: ["PIP-Net: Patch-Based Intuitive Prototypes for Interpretable Image Classification"](https://openaccess.thecvf.com/content/CVPR2023/papers/Nauta_PIP-Net_Patch-Based_Intuitive_Prototypes_for_Interpretable_Image_Classification_CVPR_2023_paper.pdf) introduces PIP-Net for natural images.\
+**Medical applications, data quality inspection and manual corrections**: [Interpreting and Correcting Medical Image Classification with PIP-Net](https://arxiv.org/abs/2307.10404), applies PIP-Net to X-rays and skin lesion images where biases can be fixed by (manually) disabling prototypes. \
 **Evaluation of part-prototype models**: Discussion and ideas for future work on evaluation in Chapter 8 of [my PhD thesis](https://research.utwente.nl/en/publications/explainable-ai-and-interpretable-computer-vision-from-oversight-t), paper will be presented at the [XAI World Conference](https://xaiworldconference.com/) in July 2023. 
 
 
