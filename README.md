@@ -35,8 +35,8 @@ Various trained versions of PIP-Net are made available:
 
 - PIP-Net with the ConvNext backbone (recommended) trained on the birds CUB-200-2011 dataset is available [for download here](https://drive.google.com/file/d/1G8iiXgZ5gENYicwS8nLIg2Gf43A49kKm/view)  (320MB). Download the CUB dataset (see instructions in this README) and run the following command to generate the prototypes and evaluate the model: 
 ``python3 main.py --dataset CUB-200-2011 --epochs_pretrain 0 --batch_size 64 --freeze_epochs 10 --epochs 0 --log_dir ./runs/pipnet_cub --state_dict_dir_net ./pipnet_cub_trained``. Update the path of ``--state_dict_dir_net`` to the checkpoint if needed.
-- PIP-Net with the ResNet50 backbone trained on the birds CUB-200-2011 dataset is available [for download here](https://drive.google.com/file/d/1zI1bcEXDsp8eN20msSiySo6UHD9y_bgw/view)  (280MB).
-- PIP-Net with the ConvNext backbone (recommended) trained on the CARS dataset is available [for download here](https://drive.google.com/file/d/1JQNbhzw6s7yJsd_3--hCAReGkbT9PRlP/view)  (320MB).
+- PIP-Net with the ResNet50 backbone trained on the birds CUB-200-2011 dataset is available [for download here](https://drive.google.com/file/d/1zI1bcEXDsp8eN20msSiySo6UHD9y_bgw/view)  (280MB). Use ``--net resnet50``.
+- PIP-Net with the ConvNext backbone (recommended) trained on the CARS dataset is available [for download here](https://drive.google.com/file/d/1JQNbhzw6s7yJsd_3--hCAReGkbT9PRlP/view)  (320MB). Use ``--dataset CARS``.
 - PIP-Net with the ResNet50 backbone trained on the CARS dataset is available [for download here](https://drive.google.com/file/d/15t_nIjqR6m-dRFljqi-ntyv-gr4TIF7m/view)  (280MB).
 
 ### Data
