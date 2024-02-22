@@ -104,9 +104,9 @@ def run_pipnet(args=None):
                 print("Classification layer initialized with mean", torch.mean(net.module._classification.weight).item(), flush=True)
                 if args.bias:
                     torch.nn.init.constant_(net.module._classification.bias, val=0.)
-            else:
-                if 'optimizer_classifier_state_dict' in checkpoint.keys():
-                    optimizer_classifier.load_state_dict(checkpoint['optimizer_classifier_state_dict'])
+            # else: #uncomment these lines if you want to load the optimizer too
+            #     if 'optimizer_classifier_state_dict' in checkpoint.keys():
+            #         optimizer_classifier.load_state_dict(checkpoint['optimizer_classifier_state_dict'])
             
         else:
             net.module._add_on.apply(init_weights_xavier)
