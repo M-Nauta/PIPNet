@@ -2,7 +2,7 @@
 This repository presents the PyTorch code for PIP-Net (Patch-based Intuitive Prototypes Network). 
 
 **Main Paper at CVPR**: ["PIP-Net: Patch-Based Intuitive Prototypes for Interpretable Image Classification"](https://openaccess.thecvf.com/content/CVPR2023/papers/Nauta_PIP-Net_Patch-Based_Intuitive_Prototypes_for_Interpretable_Image_Classification_CVPR_2023_paper.pdf) introduces PIP-Net for natural images.\
-**Medical applications, data quality inspection and manual corrections**: [Interpreting and Correcting Medical Image Classification with PIP-Net](https://arxiv.org/abs/2307.10404), applies PIP-Net to X-rays and skin lesion images where biases can be fixed by (manually) disabling prototypes. \
+**Medical applications, data quality inspection and manual corrections**: [Interpreting and Correcting Medical Image Classification with PIP-Net](https://link.springer.com/chapter/10.1007/978-3-031-50396-2_11), applies PIP-Net to X-rays and skin lesion images where biases can be fixed by (manually) disabling prototypes. \
 **Evaluation of part-prototype models like PIP-Net**: [The Co-12 Recipe for Evaluating Interpretable Part-Prototype Image Classifiers](https://arxiv.org/abs/2307.14517), presented at the [XAI World Conference](https://xaiworldconference.com/) in July 2023. 
 
 
@@ -21,10 +21,6 @@ PIP-Net is an interpretable and intuitive deep learning method for image classif
 ### Training PIP-Net
 PIP-Net can be trained by running `main.py` with arguments. Run `main.py --help` to see all the argument options. Recommended parameters per dataset are present in the `used_arguments.txt` file (usually corresponds to the default options). 
 
-#### Trained checkpoint
-PIP-Net trained on the birds CUB-200-2011 dataset is available [for download](https://drive.google.com/file/d/1G8iiXgZ5gENYicwS8nLIg2Gf43A49kKm/view)  (320MB). Download the CUB dataset (see instructions in this README) and run the following command to generate the prototypes and evaluate the model: 
-``python3 main.py --dataset CUB-200-2011 --epochs_pretrain 0 --batch_size 64 --freeze_epochs 10 --epochs 0 --log_dir ./runs/pipnet_cub --state_dict_dir_net ./pipnet_cub_trained``. Update the path of ``--state_dict_dir_net`` if needed.
-
 #### Training PIP-Net on your own data
 Want to train PIP-Net on another dataset? Add your dataset in ``util/data.py`` by creating a function ``get_yourdata`` with the desired data augmentation (that captures human perception of similarity), add it to the existing ``get_data`` function in ``util/data.py`` and give your dataset a name. Use ``--dataset your_dataset_name`` as argument to run PIP-Net on your dataset. 
 
@@ -33,6 +29,15 @@ Other relevant arguments are for example  ``--weighted_loss`` which is useful wh
 Check your `--log_dir` to keep track of the training progress. This directory contains `log_epoch_overview.csv` which prints statistics per epoch. File `tqdm.txt` prints updates per iteration and potential errors. File `out.txt` includes all print statements such as additional info. See the **Interpreting the Results** section for further details. 
 
 Visualizations of prototypes are included in your `--log_dir` / `--dir_for_saving_images`. 
+
+#### Trained checkpoints
+Various trained versions of PIP-Net are made available:
+
+- PIP-Net with the ConvNext backbone (recommended) trained on the birds CUB-200-2011 dataset is available [for download here](https://drive.google.com/file/d/1G8iiXgZ5gENYicwS8nLIg2Gf43A49kKm/view)  (320MB). Download the CUB dataset (see instructions in this README) and run the following command to generate the prototypes and evaluate the model: 
+``python3 main.py --dataset CUB-200-2011 --epochs_pretrain 0 --batch_size 64 --freeze_epochs 10 --epochs 0 --log_dir ./runs/pipnet_cub --state_dict_dir_net ./pipnet_cub_trained``. Update the path of ``--state_dict_dir_net`` to the checkpoint if needed.
+- PIP-Net with the ResNet50 backbone trained on the birds CUB-200-2011 dataset is available [for download here](https://drive.google.com/file/d/1zI1bcEXDsp8eN20msSiySo6UHD9y_bgw/view)  (280MB).
+- PIP-Net with the ConvNext backbone (recommended) trained on the CARS dataset is available [for download here](https://drive.google.com/file/d/1JQNbhzw6s7yJsd_3--hCAReGkbT9PRlP/view)  (320MB).
+- PIP-Net with the ResNet50 backbone trained on the CARS dataset is available [for download here](https://drive.google.com/file/d/15t_nIjqR6m-dRFljqi-ntyv-gr4TIF7m/view)  (280MB).
 
 ### Data
 The code can be applied to any imaging classification data set, structured according to the [Imagefolder format](https://pytorch.org/vision/stable/generated/torchvision.datasets.ImageFolder.html#torchvision.datasets.ImageFolder): 
